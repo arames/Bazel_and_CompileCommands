@@ -72,8 +72,7 @@ def _get_cpp_command(cpp_compile_info):
   compiler = cpp_compile_info.tool
   options = ' '.join(cpp_compile_info.compiler_option)
   source = cpp_compile_info.source_file
-  output = cpp_compile_info.output_file
-  return '%s %s -c %s -o %s' % (compiler, options, source, output), source
+  return '%s %s' % (compiler, options), source
 
 def main(argv):
   action = extra_actions_base_pb2.ExtraActionInfo()
