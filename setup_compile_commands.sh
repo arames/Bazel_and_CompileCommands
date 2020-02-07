@@ -154,7 +154,7 @@ def main(argv):
                              'bazel-bin/../extra_actions',
                              'tools/actions/generate_compile_commands_action')
   command_directory = subprocess.check_output(
-    ('bazel', 'info', 'execution_root'),
+    ('bazel'] + argv[1:] + ['info', 'execution_root'),
     cwd=source_path).decode('utf-8').rstrip()
   commands = _get_compile_commands(pathlib.Path(action_outs), command_directory)
   with open(os.path.join(source_path, 'compile_commands.json'), 'w') as f:
